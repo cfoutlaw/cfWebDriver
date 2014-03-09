@@ -1,0 +1,9 @@
+*.bak
+*_BAK*
+*BAK_*
+.project
+web.xml
+[Ww]eb.[Cc]onfig*
+local[sS]ettings.cfm
+org.eclipse.core.resources.prefs/
+settings.xml

@@ -14,42 +14,42 @@
 	public cfWebDriver.remote.RemoteWebElement function findElementByClassName(required string className)
 		output="false"
 	{
-		return new findElement(by().className(arguments.className));
+		return findElement(by().className(arguments.className));
 	}
 	public cfWebDriver.remote.RemoteWebElement function findElementByCssSelector(required string selector)
 		output="false"
 	{
-		return new findElement(by().cssSelector(arguments.selector));
+		return findElement(by().cssSelector(arguments.selector));
 	}
 	public cfWebDriver.remote.RemoteWebElement function findElementById(required string id)
 		output="false"
 	{
-		return new findElement(by().id(arguments.id));
+		return findElement(by().id(arguments.id));
 	}
 	public cfWebDriver.remote.RemoteWebElement function findElementByLinkText(required string linkText)
 		output="false"
 	{
-		return new findElement(by().linkText(arguments.linkText));
+		return findElement(by().linkText(arguments.linkText));
 	}
 	public cfWebDriver.remote.RemoteWebElement function findElementByName(required string name)
 		output="false"
 	{
-		return new findElement(by().name(arguments.name));
+		return findElement(by().name(arguments.name));
 	}
 	public cfWebDriver.remote.RemoteWebElement function findElementByPartialLinkText(required string linkText)
 		output="false"
 	{
-		return new findElement(by().partialLinkText(arguments.linkText));
+		return findElement(by().partialLinkText(arguments.linkText));
 	}
 	public cfWebDriver.remote.RemoteWebElement function findElementByTagName(required string tagName)
 		output="false"
 	{
-		return new findElement(by().tagName(arguments.tagName));
+		return findElement(by().tagName(arguments.tagName));
 	}
 	public cfWebDriver.remote.RemoteWebElement function findElementByXPath(required string xpath)
 		output="false"
 	{
-		return new findElement(by().xpath(arguments.xpath));
+		return findElement(by().xpath(arguments.xpath));
 	}
 	public array function findElements(required any by)
 		output="false"

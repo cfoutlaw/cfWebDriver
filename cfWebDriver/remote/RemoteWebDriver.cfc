@@ -9,7 +9,7 @@
 	{
 		variables.driver = arguments.driver;
 	}
-	public any function getDriver()
+	private any function getDriver()
 		output="false"
 	{
 		return variables.driver;

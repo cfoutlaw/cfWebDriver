@@ -69,36 +69,36 @@
 	public array function findElementsByCssSelector(required string selector)
 		output="false"
 	{
-		return findElements(by().className(arguments.className));
+		return findElements(by().cssSelector(arguments.selector));
 	}
 	public array function findElementsById(required string id)
 		output="false"
 	{
-		return findElements(by().className(arguments.className));
+		return findElements(by().id(arguments.id));
 	}
 	public array function findElementsByLinkText(required string linkText)
 		output="false"
 	{
-		return findElements(by().className(arguments.className));
+		return findElements(by().linkText(arguments.linkText));
 	}
 	public array function findElementsByName(required string name)
 		output="false"
 	{
-		return findElements(by().className(arguments.className));
+		return findElements(by().name(arguments.name));
 	}
 	public array function findElementsByPartialLinkText(required string linkText)
 		output="false"
 	{
-		return findElements(by().className(arguments.className));
+		return findElements(by().partialLinkText(arguments.linkText));
 	}
 	public array function findElementsByTagName(required string tagName)
 		output="false"
 	{
-		return findElements(by().className(arguments.className));
+		return findElements(by().tagName(arguments.tagName));
 	}
-	public array function findElementsByXPath(required string xPath)
+	public array function findElementsByXPath(required string xpath)
 		output="false"
 	{
-		return findElements(by().className(arguments.className));
+		return findElements(by().xPath(arguments.xpath));
 	}
 }

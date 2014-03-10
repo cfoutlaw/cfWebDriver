@@ -47,7 +47,7 @@
 	public any function tagName(required string name)
 		outout="false"
 	{
-		return variables.javaBy.tagName(arguments.tagName);
+		return variables.javaBy.tagName(arguments.name);
 	}
 	public string function toString()
 		outout="false"

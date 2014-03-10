@@ -5,7 +5,7 @@
 	public any function init()
 		output="false"
 	{
-		if (!structKeyExists(request, "ieDriver")) {
+		if (!structKeyExists(request, "ieDriver") || isNull(request.ieDriver.getSessionId())) {
 			var driver = createObject("java", "org.openqa.selenium.remote.RemoteWebDriver");
 			driver.init(getUrl("http://localhost:4444/wd/hub"), getInternetExplorerCapability());
 			request.ieDriver = driver;

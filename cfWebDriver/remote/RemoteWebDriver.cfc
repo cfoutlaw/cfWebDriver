@@ -37,7 +37,7 @@
 	public any function switchTo()
 		output="false"
 	{
-		return getDriver().switchTo();
+		return new cfWebDriver.remote.RemoteTargetLocator(getDriver());
 	}
 	public void function quit()
 		output="false"
@@ -73,11 +73,6 @@
 		output="false"
 	{
 		setDriver(new cfWebDriver.remote.InternetExplorerDriver());
-	}
-	public void function switchToWindow(required any window)
-		output="false"
-	{
-		getDriver().switchTo().window(arguments.window);
 	}
 	public void function setPosition(required numeric x, required numeric y)
 		output="false"

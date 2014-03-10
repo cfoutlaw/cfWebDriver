@@ -14,7 +14,7 @@
 	{
 		variables.element = arguments.element;
 	}
-	private any function getElement()
+	public any function getElement()
 		output="false"
 	{
 		return variables.element;

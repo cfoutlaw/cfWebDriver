@@ -49,6 +49,11 @@
 	{
 		return getDriver().getPageSource();
 	}
+	public string function getCurrentUrl()
+		output="false"
+	{
+		return getDriver().getCurrentUrl();
+	}
 	public string function getTitle()
 		output="false"
 	{

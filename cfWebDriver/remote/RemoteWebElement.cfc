@@ -116,6 +116,7 @@
 	public boolean function isDisplayed()
 		output="false"
 	{
+		return getElement().isDisplayed();
 	}
 	public boolean function isEnabled()
 		output="false"
@@ -147,5 +148,16 @@
 		output="false"
 	{
 		return getOuterHtml();
+	}
+	public boolean function setValue(required string value)
+		output="false"
+	{
+		try {
+			jsClear();
+			sendKeys(arguments.value);
+		} catch (any e) {
+			return false;
+		}
+		return true;
 	}
 }

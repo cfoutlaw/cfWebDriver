@@ -19,6 +19,11 @@
 	{
 		return this;
 	}
+	public any function executeScript(required string script, required any args)
+		output="false"
+	{
+		getDriver().executeScript(arguments.script, arguments.args);
+	}
 	public void function get(required string address)
 		output="false"
 	{

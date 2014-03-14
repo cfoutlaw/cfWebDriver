@@ -1,7 +1,7 @@
 ﻿component
 	output="false"
 {
-	private cfWebDriver.By function by()
+	private cfWebDriver.By function getBy()
 		output="false"
 	{
 		return new cfWebDriver.By();
@@ -14,42 +14,42 @@
 	public cfWebDriver.remote.RemoteWebElement function findElementByClassName(required string className)
 		output="false"
 	{
-		return findElement(by().className(arguments.className));
+		return findElement(getBy().className(arguments.className));
 	}
 	public cfWebDriver.remote.RemoteWebElement function findElementByCssSelector(required string selector)
 		output="false"
 	{
-		return findElement(by().cssSelector(arguments.selector));
+		return findElement(getBy().cssSelector(arguments.selector));
 	}
 	public cfWebDriver.remote.RemoteWebElement function findElementById(required string id)
 		output="false"
 	{
-		return findElement(by().id(arguments.id));
+		return findElement(getBy().id(arguments.id));
 	}
 	public cfWebDriver.remote.RemoteWebElement function findElementByLinkText(required string linkText)
 		output="false"
 	{
-		return findElement(by().linkText(arguments.linkText));
+		return findElement(getBy().linkText(arguments.linkText));
 	}
 	public cfWebDriver.remote.RemoteWebElement function findElementByName(required string name)
 		output="false"
 	{
-		return findElement(by().name(arguments.name));
+		return findElement(getBy().name(arguments.name));
 	}
 	public cfWebDriver.remote.RemoteWebElement function findElementByPartialLinkText(required string linkText)
 		output="false"
 	{
-		return findElement(by().partialLinkText(arguments.linkText));
+		return findElement(getBy().partialLinkText(arguments.linkText));
 	}
 	public cfWebDriver.remote.RemoteWebElement function findElementByTagName(required string tagName)
 		output="false"
 	{
-		return findElement(by().tagName(arguments.tagName));
+		return findElement(getBy().tagName(arguments.tagName));
 	}
 	public cfWebDriver.remote.RemoteWebElement function findElementByXPath(required string xpath)
 		output="false"
 	{
-		return findElement(by().xpath(arguments.xpath));
+		return findElement(getBy().xpath(arguments.xpath));
 	}
 	public array function findElements(required any by)
 		output="false"
@@ -64,41 +64,41 @@
 	public array function findElementsByClassName(required string className)
 		output="false"
 	{
-		return findElements(by().className(arguments.className));
+		return findElements(getBy().className(arguments.className));
 	}
 	public array function findElementsByCssSelector(required string selector)
 		output="false"
 	{
-		return findElements(by().cssSelector(arguments.selector));
+		return findElements(getBy().cssSelector(arguments.selector));
 	}
 	public array function findElementsById(required string id)
 		output="false"
 	{
-		return findElements(by().id(arguments.id));
+		return findElements(getBy().id(arguments.id));
 	}
 	public array function findElementsByLinkText(required string linkText)
 		output="false"
 	{
-		return findElements(by().linkText(arguments.linkText));
+		return findElements(getBy().linkText(arguments.linkText));
 	}
 	public array function findElementsByName(required string name)
 		output="false"
 	{
-		return findElements(by().name(arguments.name));
+		return findElements(getBy().name(arguments.name));
 	}
 	public array function findElementsByPartialLinkText(required string linkText)
 		output="false"
 	{
-		return findElements(by().partialLinkText(arguments.linkText));
+		return findElements(getBy().partialLinkText(arguments.linkText));
 	}
 	public array function findElementsByTagName(required string tagName)
 		output="false"
 	{
-		return findElements(by().tagName(arguments.tagName));
+		return findElements(getBy().tagName(arguments.tagName));
 	}
 	public array function findElementsByXPath(required string xpath)
 		output="false"
 	{
-		return findElements(by().xPath(arguments.xpath));
+		return findElements(getBy().xPath(arguments.xpath));
 	}
 }

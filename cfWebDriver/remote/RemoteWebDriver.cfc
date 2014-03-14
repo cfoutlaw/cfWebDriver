@@ -4,12 +4,14 @@
 {
 	property name="driver" type="any";
 
+	this.by = new cfWebDriver.By();
+
 	private void function setDriver(required any driver)
 		output="false"
 	{
 		variables.driver = arguments.driver;
 	}
-	private any function getDriver()
+	public any function getDriver()
 		output="false"
 	{
 		return variables.driver;

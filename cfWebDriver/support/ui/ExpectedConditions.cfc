@@ -11,171 +11,213 @@
 	{
 		return function(required any wait) { return new cfWebDriver.remote.RemoteWebElement(arguments.wait.until(condition)); };
 	}
-	public ExpectedConditions function alertIsPresent()
+	private any function returnElementArray(condition)
 		output="false"
 	{
+		return function(required any wait) {
+			var elements = [];
+			var webElements = arguments.wait.until(condition);
+			for (var i=1;i<=arrayLen(webElements);i++) {
+				arrayAppend(elements, new cfWebDriver.remote.RemoteWebElement(webElements[i]));
+			}
+			return elements;
+		};
 	}
-	public ExpectedConditions function elementSelectionStateToBeBy(By locator, boolean selected)
+	private any function returnPrimative(condition)
 		output="false"
 	{
+		return function(required any wait) { return arguments.wait.until(condition); };
 	}
-	/**
-	  * An expectation for checking if the given element is selected.
-	  */
-	public ExpectedConditions function elementSelectionStateToBe(WebElement element, boolean selected)
+	public function function alertIsPresent()
 		output="false"
 	{
+		var condition = createCondition().alertIsPresent();
+		return function(required any wait) { return new cfWebDriver.Alert(arguments.wait.until(condition)); };
 	}
-	/**
-	  * An expectation for checking an element is visible and enabled such that you can click it.
-	  */
-	public ExpectedConditions function elementToBeClickableBy(By locator)
+	public function function elementSelectionStateToBeBy(required any locator, required boolean selected)
 		output="false"
 	{
-	}
-	/**
-	  * An expectation for checking an element is visible and enabled such that you can click it.
-	  */
-	public ExpectedConditions function elementToBeClickable(WebElement element)
-		output="false"
-	{
-	}
-	public ExpectedConditions function elementToBeSelectedBy(By locator)
-		output="false"
-	{
+		return returnPrimative(createCondition().elementSelectionStateToBe(arguments.locator, arguments.selected));
 	}
 	/**
 	  * An expectation for checking if the given element is selected.
 	  */
-	public ExpectedConditions function elementToBeSelected(WebElement element)
+	public function function elementSelectionStateToBe(required cfWebDriver.remote.RemoteWebElement element,
+													   required boolean selected)
 		output="false"
 	{
+		return returnPrimative(createCondition().elementSelectionStateToBe(arguments.element.getElement(), arguments.selected));
+	}
+	/**
+	  * An expectation for checking an element is visible and enabled such that you can click it.
+	  */
+	public function function elementToBeClickableBy(required any locator)
+		output="false"
+	{
+		return returnElement(createCondition().elementToBeClickable(arguments.locator));
+	}
+	/**
+	  * An expectation for checking an element is visible and enabled such that you can click it.
+	  */
+	public function function elementToBeClickable(required cfWebDriver.remote.RemoteWebElement element)
+		output="false"
+	{
+		return returnElement(createCondition().elementToBeClickable(arguments.element.getElement()));
+	}
+	public function function elementToBeSelectedBy(required any locator)
+		output="false"
+	{
+		return returnPrimative(createCondition().elementToBeSelected(arguments.locator));
+	}
+	/**
+	  * An expectation for checking if the given element is selected.
+	  */
+	public function function elementToBeSelected(required cfWebDriver.remote.RemoteWebElement element)
+		output="false"
+	{
+		return returnPrimative(createCondition().elementToBeSelected(arguments.element.getElement()));
 	}
 	/**
 	  * An expectation for checking whether the given frame is available to switch to.
 	  */
-	public ExpectedConditions function frameToBeAvailableAndSwitchToItBy(By locator)
+	public function function frameToBeAvailableAndSwitchToItBy(required any locator)
 		output="false"
 	{
+		return function(required any wait) { arguments.wait.until(createCondition().frameToBeAvailableAndSwitchToIt(locator)); };
 	}
 	/**
 	  * An expectation for checking whether the given frame is available to switch to.
 	  */
-	public ExpectedConditions function frameToBeAvailableAndSwitchToIt(java.lang.String frameLocator)
+	public function function frameToBeAvailableAndSwitchToIt(required string frameLocator)
 		output="false"
 	{
+		return function(required any wait) { arguments.wait.until(createCondition().frameToBeAvailableAndSwitchToIt(frameLocator)); };
 	}
 	/**
 	  * An expectation for checking that an element is either invisible or not present on the DOM.
 	  */
-	public ExpectedConditions function invisibilityOfElementLocated(By locator)
+	public function function invisibilityOfElementLocated(required any locator)
 		output="false"
 	{
+		return returnPrimative(createCondition().invisibilityOfElementLocated(arguments.locator));
 	}
 	/**
 	  * An expectation for checking that an element with text is either invisible or not present on the DOM.
 	  */
-	public ExpectedConditions function invisibilityOfElementWithText(By locator, java.lang.String text)
+	public function function invisibilityOfElementWithText(required any locator, required string text)
 		output="false"
 	{
+		return returnPrimative(createCondition().invisibilityOfElementWithText(arguments.locator, arguments.text));
 	}
 	/**
 	  * An expectation with the logical opposite condition of the given condition.
 	  */
-	public ExpectedConditions function _not(any condition)
+	public function function _not(any condition)
 		output="false"
 	{
 	}
 	/**
 	  * An expectation for checking that there is at least one element present on a web page.
 	  */
-	public ExpectedConditions function presenceOfAllElementsLocatedBy(By locator)
+	public function function presenceOfAllElementsLocatedBy(required any locator)
 		output="false"
 	{
+		return returnElement(createCondition().elementToBeClickable(arguments.locator));
 	}
 	/**
 	  * An expectation for checking that an element is present on the DOM of a page.
 	  */
-	public ExpectedConditions function presenceOfElementLocated(By locator)
+	public function function presenceOfElementLocated(required any locator)
 		output="false"
 	{
+		return returnElement(createCondition().presenceOfElementLocated(arguments.locator));
 	}
 	/**
 	  * Wrapper for a condition, which allows for elements to update by redrawing.
 	  */
-	public ExpectedConditions function refreshed(any condition)
+	public function function refreshed(any condition)
 		output="false"
 	{
 	}
 	/**
 	  * Wait until an element is no longer attached to the DOM.
 	  */
-	public ExpectedConditions function stalenessOf(WebElement element)
+	public function function stalenessOf(required cfWebDriver.remote.RemoteWebElement element)
 		output="false"
 	{
+		return returnPrimative(createCondition().stalenessOf(arguments.element.getElement()));
 	}
 	/**
 	  * An expectation for checking if the given text is present in the specified element.
 	  */
-	public ExpectedConditions function textToBePresentInElement(WebElement element, java.lang.String text)
+	public function function textToBePresentInElement(required cfWebDriver.remote.RemoteWebElement element, required string text)
 		output="false"
 	{
+		return returnPrimative(createCondition().textToBePresentInElementLocated(arguments.locator, arguments.text));
 	}
 	/**
 	  * An expectation for checking if the given text is present in the element that matches the given locator.
 	  */
-	public ExpectedConditions function textToBePresentInElementLocated(By locator, java.lang.String text)
+	public function function textToBePresentInElementLocated(required any locator, required string text)
 		output="false"
 	{
+		return returnPrimative(createCondition().textToBePresentInElementLocated(arguments.locator, arguments.text));
 	}
 	/**
 	  * An expectation for checking if the given text is present in the specified elements value attribute.
 	  */
-	public ExpectedConditions function textToBePresentInElementValueBy(By locator, java.lang.String text)
+	public function function textToBePresentInElementValueBy(required any locator, required string text)
 		output="false"
 	{
+		return returnPrimative(createCondition().textToBePresentInElementLocated(arguments.locator, arguments.text));
 	}
 	/**
 	  * An expectation for checking if the given text is present in the specified elements value attribute.
 	  */
-	public ExpectedConditions function textToBePresentInElementValue(WebElement element, java.lang.String text)
+	public function function textToBePresentInElementValue(required cfWebDriver.remote.RemoteWebElement element, required string text)
 		output="false"
 	{
+		return returnPrimative(createCondition().textToBePresentInElementLocated(arguments.locator, arguments.text));
 	}
 	/**
 	  * An expectation for checking that the title contains a case-sensitive substring
 	  */
-	public ExpectedConditions function titleContains(java.lang.String title)
+	public function function titleContains(required string title)
 		output="false"
 	{
+		return returnPrimative(createCondition().textToBePresentInElementLocated(arguments.locator, arguments.text));
 	}
 	/**
 	  * An expectation for checking the title of a page.
 	  */
-	public ExpectedConditions function titleIs(java.lang.String title)
+	public function function titleIs(required string title)
 		output="false"
 	{
+		return returnPrimative(createCondition().titleIs(arguments.title));
 	}
 	/**
 	  * An expectation for checking that an element, known to be present on the DOM of a page, is visible.
 	  */
-	public ExpectedConditions function visibilityOf(WebElement element)
+	public function function visibilityOf(required cfWebDriver.remote.RemoteWebElement element)
 		output="false"
 	{
+		return returnElement(createCondition().elementToBeClickable(arguments.element.getElement()));
 	}
 	/**
 	  * An expectation for checking that all elements present on the web page that match the locator are visible.
 	  */
-	public ExpectedConditions function visibilityOfAllElements(any elements)
+	public function function visibilityOfAllElements(any elements)
 		output="false"
 	{
+		return returnElement(createCondition().elementToBeClickable(arguments.locator));
 	}
 	/**
 	  * An expectation for checking that all elements present on the web page that match the locator are visible.
 	  */
-	public ExpectedConditions function visibilityOfAllElementsLocatedBy(By locator)
+	public function function visibilityOfAllElementsLocatedBy(required any locator)
 		output="false"
 	{
+		return returnElement(createCondition().elementToBeClickable(arguments.locator));
 	}
 	/**
 	  * An expectation for checking that an element is present on the DOM of a page and visible.

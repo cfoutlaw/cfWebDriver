@@ -125,6 +125,7 @@
 	public boolean function isSelected()
 		output="false"
 	{
+		return getElement().isSelected();
 	}
 	public void function setFileDetector(required any fileDetector)
 		output="false"

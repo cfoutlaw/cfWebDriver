@@ -122,7 +122,7 @@
 	public function function presenceOfAllElementsLocatedBy(required any locator)
 		output="false"
 	{
-		return returnElement(createCondition().elementToBeClickable(arguments.locator));
+		return returnElementArray(createCondition().presenceOfAllElementsLocatedBy(arguments.locator));
 	}
 	/**
 	  * An expectation for checking that an element is present on the DOM of a page.
@@ -153,7 +153,7 @@
 	public function function textToBePresentInElement(required cfWebDriver.remote.RemoteWebElement element, required string text)
 		output="false"
 	{
-		return returnPrimative(createCondition().textToBePresentInElementLocated(arguments.locator, arguments.text));
+		return returnPrimative(createCondition().textToBePresentInElement(arguments.element.getElement(), arguments.text));
 	}
 	/**
 	  * An expectation for checking if the given text is present in the element that matches the given locator.
@@ -169,7 +169,7 @@
 	public function function textToBePresentInElementValueBy(required any locator, required string text)
 		output="false"
 	{
-		return returnPrimative(createCondition().textToBePresentInElementLocated(arguments.locator, arguments.text));
+		return returnPrimative(createCondition().textToBePresentInElementValue(arguments.locator, arguments.text));
 	}
 	/**
 	  * An expectation for checking if the given text is present in the specified elements value attribute.
@@ -177,7 +177,7 @@
 	public function function textToBePresentInElementValue(required cfWebDriver.remote.RemoteWebElement element, required string text)
 		output="false"
 	{
-		return returnPrimative(createCondition().textToBePresentInElementLocated(arguments.locator, arguments.text));
+		return returnPrimative(createCondition().textToBePresentInElementValue(arguments.element.getElement(), arguments.text));
 	}
 	/**
 	  * An expectation for checking that the title contains a case-sensitive substring
@@ -185,7 +185,7 @@
 	public function function titleContains(required string title)
 		output="false"
 	{
-		return returnPrimative(createCondition().textToBePresentInElementLocated(arguments.locator, arguments.text));
+		return returnPrimative(createCondition().titleContains(arguments.title));
 	}
 	/**
 	  * An expectation for checking the title of a page.
@@ -201,7 +201,7 @@
 	public function function visibilityOf(required cfWebDriver.remote.RemoteWebElement element)
 		output="false"
 	{
-		return returnElement(createCondition().elementToBeClickable(arguments.element.getElement()));
+		return returnElement(createCondition().visibilityOf(arguments.element.getElement()));
 	}
 	/**
 	  * An expectation for checking that all elements present on the web page that match the locator are visible.
@@ -209,7 +209,6 @@
 	public function function visibilityOfAllElements(any elements)
 		output="false"
 	{
-		return returnElement(createCondition().elementToBeClickable(arguments.locator));
 	}
 	/**
 	  * An expectation for checking that all elements present on the web page that match the locator are visible.
@@ -217,7 +216,7 @@
 	public function function visibilityOfAllElementsLocatedBy(required any locator)
 		output="false"
 	{
-		return returnElement(createCondition().elementToBeClickable(arguments.locator));
+		return returnElementArray(createCondition().visibilityOfAllElementsLocatedBy(arguments.locator));
 	}
 	/**
 	  * An expectation for checking that an element is present on the DOM of a page and visible.

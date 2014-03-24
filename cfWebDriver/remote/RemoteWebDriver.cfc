@@ -24,7 +24,7 @@
 	public any function executeScript(required string script, required any args)
 		output="false"
 	{
-		getDriver().executeScript(arguments.script, arguments.args);
+		return getDriver().executeScript(arguments.script, arguments.args);
 	}
 	public void function get(required string address)
 		output="false"
@@ -112,5 +112,10 @@
 		output="false"
 	{
 		getDriver().manage().deleteCookieNamed(arguments.cookieName);
+	}
+	public cfWebDriver.interactions.Mouse function getMouse()
+		output="false"
+	{
+		return new cfWebDriver.interactions.Mouse(getDriver().getMouse());
 	}
 }

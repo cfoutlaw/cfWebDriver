@@ -78,6 +78,7 @@
 		output="false"
 	{
 		// returns: org.openqa.selenium.interactions.internal.Coordinates
+		return getElement().getCoordinates();
 	}
 	public string function getCssValue(required string propertyName)
 		output="false"

@@ -118,4 +118,9 @@
 	{
 		return new cfWebDriver.interactions.Mouse(getDriver().getMouse());
 	}
+	public cfWebDriver.interactions.Keyboard function getKeyboard()
+		output="false"
+	{
+		return new cfWebDriver.interactions.Keyboard(getDriver().getKeyboard());
+	}
 }

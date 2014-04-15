@@ -122,6 +122,7 @@
 	public boolean function isEnabled()
 		output="false"
 	{
+		return getElement().isEnabled();
 	}
 	public boolean function isSelected()
 		output="false"
